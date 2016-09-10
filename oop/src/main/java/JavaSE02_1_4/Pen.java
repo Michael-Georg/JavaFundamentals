@@ -1,16 +1,15 @@
-package OfficeTasks1_4;
+package JavaSE02_1_4;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * The {@code Pen} class include three fields:
+ * The {@code Pen} class includes three fields:
  * Price (double) - must be zero or more;
- * ProducerName(String) - contain a name of producer of the item;
- * Color(String) - Color of the pen;
+ * ProducerName(String) - contains a name of producer of the item;
+ * Color(String) - color of the pen;
  *
- * ProducerName and Color cannot be changed after they
- * are created.
+ * ProducerName and Color can't be changed after item was created.
 
  * The class {@code Pen} includes Getter methods for all fields, implemented through the method
  * {@code toString}, {@code equals}, {@code hashCode} defined by {@code Object} and

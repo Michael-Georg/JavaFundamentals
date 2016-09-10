@@ -1,4 +1,4 @@
-package OfficeTasks1_4;
+package JavaSE02_1_4;
 
 import lombok.*;
 

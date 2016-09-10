@@ -1,19 +1,15 @@
-package OfficeTasks1_4;
+package JavaSE02_1_4;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Set of Stationery on individual workplace. Include methods for addition base set of items,
+ * Set of Stationery for individual workplace. Include methods for addition base set of items,
  * calculate the total price, add item to workplace,
  * print all items, sort items by price, producer name, price and producer name.
  */
 public class PersonalStationery {
     private List<Stationery> list;
-
-    public Stationery getItem(int i) {
-        return list.get(i);
-    }
 
     public PersonalStationery() {
         list = new LinkedList<>();
@@ -45,12 +41,16 @@ public class PersonalStationery {
         return this;
     }
 
+    public Stationery getItem(int i) {
+        return list.get(i);
+    }
+
     public int getSize() {
         return list.size();
     }
 
     public PersonalStationery sortByPrice() {
-        list.sort((Stationery o1, Stationery o2) -> {
+        list.sort((o1, o2) -> {
             if (o1.getPrice() > o2.getPrice()) return 1;
             else if (o1.getPrice() < o2.getPrice()) return -1;
             else return 0;
@@ -60,12 +60,12 @@ public class PersonalStationery {
     }
 
     public PersonalStationery sortByProducerName() {
-        list.sort((Stationery o1, Stationery o2) -> o1.getProducerName().compareTo(o2.getProducerName()));
+        list.sort((o1, o2) -> o1.getProducerName().compareTo(o2.getProducerName()));
         return this;
     }
 
     public PersonalStationery sortPriceThenProducer() {
-        list.sort((Stationery o1, Stationery o2) -> {
+        list.sort((o1, o2) -> {
             if (o1.getPrice() > o2.getPrice()) return 1;
             else if (o1.getPrice() < o2.getPrice()) return -1;
             else return o1.getProducerName().compareTo(o2.getProducerName());
