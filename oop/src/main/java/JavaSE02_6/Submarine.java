@@ -1,7 +1,10 @@
 package JavaSE02_6;
 
+import JavaSE02_7.MyAnno;
+
 import java.time.LocalDate;
 
+@MyAnno(name = "First Annotation")
 public class Submarine {
     private LocalDate time;
 
@@ -9,7 +12,7 @@ public class Submarine {
         new SubmarineEngine().runSubmarine();
     }
 
-    String getStartTime(){
+    String getStartDate(){
         return time.toString();
     }
 

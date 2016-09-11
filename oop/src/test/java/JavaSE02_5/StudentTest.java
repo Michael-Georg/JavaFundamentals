@@ -28,7 +28,7 @@ public class StudentTest {
     @Test
     public void studsGroupsFounded() {
 
-      assertThat(Student.findStudentsGroup(1), is("MATH PHYSICS "));
+        assertThat(Student.findStudentsGroup(1), is("MATH PHYSICS "));
     }
 
     @Test
@@ -44,8 +44,6 @@ public class StudentTest {
 
     @Test
     public void allStudGrades() {
-        System.out.println(Student.students.size());
         Student.allStudGrades(9);
-
     }
 }

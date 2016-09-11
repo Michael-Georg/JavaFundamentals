@@ -11,8 +11,8 @@ public class SubmarineTest {
     @Test
     public void submarineEngineStarted() throws Exception {
         Submarine submarine = new Submarine();
-        System.out.println(submarine.getStartTime());
-        assertThat(submarine.getStartTime(), is(LocalDate.now().toString()));
+        System.out.println(submarine.getStartDate());
+        assertThat(submarine.getStartDate(), is(LocalDate.now().toString()));
 
     }
 }
