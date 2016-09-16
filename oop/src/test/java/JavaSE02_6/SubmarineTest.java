@@ -1,9 +1,7 @@
 package JavaSE02_6;
 
 import org.junit.Test;
-
 import java.time.LocalDate;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
