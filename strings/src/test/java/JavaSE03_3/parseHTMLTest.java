@@ -6,7 +6,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class parseHTMLTest {
-    ParseHTML parseText = new ParseHTML();
+    private ParseHTML parseText = new ParseHTML();
 
     @Test
     public void delAllTagsTest() throws Exception {

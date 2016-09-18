@@ -4,25 +4,25 @@ import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ParseHTML {
+class ParseHTML {
     private File file;
 
-    public ParseHTML(String filePath) {
+    private ParseHTML(String filePath) {
         file = new File(filePath);
     }
 
-    public ParseHTML() {
+    ParseHTML() {
         this("E:\\JavaPrograms\\JavaFundamentals" +
-                "\\strings\\src\\main\\java\\JavaSE03_3\\Text.html");
+                "\\strings\\src\\main\\java\\JavaSE03_3\\Text.txt");
     }
 
-    public String delAllTags(String text) {
+    String delAllTags(String text) {
         Pattern delTeg = Pattern.compile("<(\"[^\"]*\"|'[^']*'|[^'\">])*>|&nbsp;");
         Matcher mDel = delTeg.matcher(text);
         return mDel.replaceAll("");
     }
 
-    public void separateSentences(String text, BufferedWriter writer) throws IOException {
+    private void separateSentences(String text, BufferedWriter writer) throws IOException {
         Pattern getPhrase = Pattern.compile("[А-Я]([^.?!]+\\([Рр]ис\\.[ \\dи]+\\))+[^.?!]*[?.!]");
         Matcher phrase = getPhrase.matcher(text);
         while (phrase.find()) {
@@ -30,7 +30,7 @@ public class ParseHTML {
         }
     }
 
-    public boolean isLinksSequenceAscending() {
+    boolean isLinksSequenceAscending() {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(file), "cp1251"))) {
@@ -53,7 +53,7 @@ public class ParseHTML {
         return true;
     }
 
-    public void printSentencesWithLinks() {
+    void printSentencesWithLinks() {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream(file), "cp1251"));
