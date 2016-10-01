@@ -4,5 +4,7 @@ include 'core',
         'intro',
         'oop',
         'strings',
-        'io'
+        'io',
+        'threads',
+        'collections'
 
