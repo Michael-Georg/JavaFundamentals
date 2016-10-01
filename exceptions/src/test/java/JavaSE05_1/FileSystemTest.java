@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 public class FileSystemTest {
     private static final String DIRECTORYPATH = "E:\\JavaPrograms\\JavaFundamentals" +
-            "\\threads\\src\\main\\java\\JavaSE05_1";
+            "\\exceptions\\src\\main\\java\\JavaSE05_1";
     private FileSystem path1 = new FileSystem(DIRECTORYPATH);
     private FileSystem path2 = new FileSystem(DIRECTORYPATH);
 

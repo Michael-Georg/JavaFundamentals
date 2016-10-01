@@ -7,11 +7,11 @@ import static org.junit.Assert.assertThat;
 
 public class PropertyReaderTest {
     private static final String DIRECTORYPATH = "E:\\JavaPrograms\\JavaFundamentals" +
-            "\\threads\\src\\main\\resources";
+            "\\exceptions\\src\\main\\resources";
     private static final String FILEPATH = "E:\\JavaPrograms\\JavaFundamentals" +
-            "\\threads\\src\\main\\resources\\test.properties";
+            "\\exceptions\\src\\main\\resources\\test.properties";
     private static final String ANOTHERDIRECTORY = "E:\\JavaPrograms\\JavaFundamentals" +
-            "\\threads\\src\\main\\java";
+            "\\exceptions\\src\\main\\java";
 
     @Test
     public void shouldFindInFile() throws Exception {
