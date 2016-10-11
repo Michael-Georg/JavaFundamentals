@@ -7,5 +7,6 @@ include 'core',
         'io',
         'threads',
         'collections',
-        'exceptions'
+        'exceptions',
+        'JDBC'
 
