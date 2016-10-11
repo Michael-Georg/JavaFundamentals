@@ -5,7 +5,7 @@ import java.util.Random;
 @SuppressWarnings("WeakerAccess")
 class IntegerSetterGetter extends Thread {
 
-    private SharedResource resource;
+    private final SharedResource resource;
     private boolean run;
     private Random rand = new Random();
 
@@ -16,7 +16,10 @@ class IntegerSetterGetter extends Thread {
     }
 
     public void stopThread() {
-        run = false;
+        synchronized (resource) {
+            run = false;
+            resource.notifyAll();
+        }
     }
 
     public void run() {
@@ -37,17 +40,16 @@ class IntegerSetterGetter extends Thread {
     }
 
     private void getIntegersFromResource() throws InterruptedException {
-        Integer number;
+        Integer number = null;
         synchronized (resource) {
             System.out.println("Поток" + getName() + "хочет извлечь число.");
-            number = resource.getElement();
-            while (number == null && run == true)  {
+            while (run && (number = resource.getElement()) == null)  {
                 System.out.println("Поток" + getName() + "ждет пока очередь заполнится.");
                 resource.wait();
                 System.out.println("Поток" + getName() + "возобновил работу.");
-                number = resource.getElement();
             }
-            System.out.println("Поток" + getName() + "извлек число" + number);
+            if (number != null)
+                System.out.println("Поток" + getName() + "извлек число" + number);
         }
     }
 
