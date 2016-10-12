@@ -13,5 +13,6 @@ subprojects {
         compile 'ch.qos.logback:logback-classic:+'
         compileOnly 'org.projectlombok:lombok:+'
         testCompile 'junit:junit:+'
+        testCompile 'com.h2database:h2:+'
     }
 }
