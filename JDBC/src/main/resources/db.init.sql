@@ -1,8 +1,9 @@
 CREATE TABLE Book (
-    id          INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id          INT          NOT NULL AUTO_INCREMENT,
     author      VARCHAR(60),
     name        VARCHAR(100) NOT NUll,
-    year        YEAR);
+    year        YEAR,
+    PRIMARY KEY (id));
 
 INSERT INTO Book (author, name, year) VALUES ('G. Korn', 'Mathematical handbook', '1968');
 INSERT INTO Book (author, name, year) VALUES ('G. Dwight', 'Tables of integrals', '1961');

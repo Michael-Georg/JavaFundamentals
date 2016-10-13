@@ -1,11 +1,12 @@
 package JavaSE08_1;
 
-import lombok.Data;
+import lombok.Builder;
+import lombok.Value;
 
-@SuppressWarnings("WeakerAccess")
-@Data
+@Value
+@Builder
 public class Book {
-    private int id;
+    private Long id;
     private String author;
     private String name;
     private int year;

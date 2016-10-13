@@ -14,10 +14,8 @@ public class SimpleJDBCTest {
             "VALUES ('H. Schildt', 'Java 8', '2014')";
     private static final String SQLUPD = "UPDATE Book SET author = 'G. Korn T.Korn' " +
             "WHERE author = 'G. Korn'; ";
-    private final String PATH_TO_CONFIG = "e:\\JavaPrograms\\JavaFundamentals\\JDBC" +
-            "\\src\\main\\resources\\db.properties";
-    private final String PATH_TO_INIT = "e:\\JavaPrograms\\JavaFundamentals\\JDBC" +
-            "\\src\\main\\resources\\db.init.sql";
+    private final String PATH_TO_CONFIG = "src\\main\\resources\\db.properties";
+    private final String PATH_TO_INIT = "src\\main\\resources\\db.init.sql";
 
     private SimpleJDBC dao = new SimpleJDBC();
 
@@ -45,11 +43,11 @@ public class SimpleJDBCTest {
     public void shouldDeleteTable() throws Exception {
         dao.deleteTable("DROP TABLE Book");
     }
-
     @After
     public void close() {
         try {
             dao.close();
+            System.out.println("connection ");
         } catch (SQLException e) {
             e.printStackTrace();
         }

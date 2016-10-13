@@ -66,21 +66,22 @@ public class SimpleJDBC {
 
 
     public Book getBookByYear(int year) {
-        Book book = new Book();
+        Book.BookBuilder builder = Book.builder();
         try (PreparedStatement preparedStatement = connection
                 .prepareStatement("SELECT id, author, name, year FROM Book WHERE year = ?")) {
             preparedStatement.setInt(1, year);
             try (ResultSet rs = preparedStatement.executeQuery()) {
                 rs.next();
-                book.setId(rs.getInt("id"));
-                book.setAuthor(rs.getString("author"));
-                book.setName(rs.getString("name"));
-                book.setYear(rs.getInt("year"));
+                builder.id(rs.getLong("id"));
+                builder.author(rs.getString("author"));
+                builder.name(rs.getString("name"));
+                builder.year(rs.getInt("year"));
+                return builder.build();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return book;
+        return null;
     }
 
     public void deleteTable(String sql){
